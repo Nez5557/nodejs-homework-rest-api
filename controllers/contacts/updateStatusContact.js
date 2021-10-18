@@ -3,6 +3,12 @@ const { NotFound } = require('http-errors')
 const { Contact } = require('../../models')
 const { sendSeccessRes } = require('../../helpers')
 
+
+const { NotFound } = require('http-errors')
+
+const { Contact } = require('../../models')
+const { sendSeccessRes } = require('../../helpers')
+
 const updateStatusContact = async (req, res) => {
   const { contactId } = req.params
   const { favorite } = req.body
