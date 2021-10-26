@@ -1,17 +1,3 @@
-// const mongoose = require("mongoose");
-
-// const DB_HOST = "mongodb+srv://projectnode:Ws13021988@cluster0.hzmwl.mongodb.net/test"
-
-// mongoose.connect(DB_HOST, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// }).then(() => {
-//   // console.log("Database connect success")
-// })
-//   .catch (error => {
-//     console.log(error.message);
-//   })
-
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
@@ -26,6 +12,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
 app.use(logger(formatsLogger))
 app.use(cors())
 app.use(express.json())
+app.use(express.static('public'))
 
 app.use('/api/contacts', contactsRouter)
 app.use('/api/users', authRouter)
